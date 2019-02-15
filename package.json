@@ -1,0 +1,15 @@
+{
+  "name": "nodeweba",
+  "version": "1.0.0",
+  "description": "Pure Node.js server for WEBA",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Frank Théodoloz",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.3.3"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "module_bonjour",
+  "version": "1.0.0",
+  "description": "Test module custom dont le fichier principal != index.js",
+  "dependencies": {
+    "colors": "^1.3.3"
+  },
+  "main": "main.js"
+}

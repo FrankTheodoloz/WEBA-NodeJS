@@ -1,0 +1,8 @@
+{
+  "name": "module_colorize",
+  "version": "1.0.0",
+  "description": "Test module custom et méthodes de module",
+  "dependencies": {
+    "colors": "^1.3.3"
+  }
+}

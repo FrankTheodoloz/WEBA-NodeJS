@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Socket.io</title>
+</head>
+<body>
+<h3>Chat Socket.io</h3>
+
+<style type="text/css">
+    .pseudo {
+        color: white;
+        background: black;
+        font-weight: bold;
+    }
+</style>
+
+<input type="text" id="message"/>
+<button id="send">Envoyer</button>
+<div id="chat"></div>
+
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+
+<script>
+    var socket = io.connect('http://192.168.1.123:8080');
+
+    var userName = prompt('Quel est votre pseudo ?');
+    $('title').prepend(userName);
+
+    socket.emit('newUser', userName);
+
+    socket.on('sysMessage', function (message) {
+        $('#chat').append('<div><i>' + message + '</i></div>'
+        )
+    });
+
+    socket.on('receiveMessage', function (user, message) {
+        $('#chat').append('<div><span class="pseudo"> ' + user + ' </span>&nbsp; ' + message + '</div>')
+    });
+
+    $('#send').click(function () {
+        socket.emit('sendMessage', $('#message').val());
+    })
+
+</script>
+
+</body>
+</html>
